@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vox Obscura – Character Creation</title>
+  <link rel="stylesheet" href="css/character.css">
+</head>
+<body>
+  <div id="char-create">
+    <h1>Create Your Operative</h1>
+
+    <section id="step-name">
+      <label for="charName">Name:</label>
+      <input type="text" id="charName" placeholder="Enter name" oninput="updateNamePreview()"/>
+      <p id="name-preview" class="preview"></p>
+      <button onclick="goToBackground()">Next</button>
+    </section>
+
+    <section id="step-background" class="hidden">
+      <p>Select Background:</p>
+      <div class="options">
+        <button onclick="selectBackground('Hive Scum')">Hive Scum</button>
+        <button onclick="selectBackground('Acolyte')">Inquisition Acolyte</button>
+        <button onclick="selectBackground('Archivist')">Archivist</button>
+      </div>
+      <p id="bg-preview" class="preview"></p>
+      <button onclick="goToStats()">Next</button>
+    </section>
+
+    <section id="step-stats" class="hidden">
+      <p>Distribute 10 stat points:</p>
+      <div id="stats-container"></div>
+      <p id="remaining-points">Points left: 10</p>
+      <button onclick="finalizeCharacter()">Start Game</button>
+    </section>
+  </div>
+
+  <script src="js/character.js"></script>
+</body>
+</html>
