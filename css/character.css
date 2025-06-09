@@ -106,3 +106,56 @@ h1 {
   margin-left: auto;
   margin-right: auto;
 }
+
+#stats-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.stat-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0.3rem 0;
+}
+
+.stat-label {
+  width: 100px;
+  text-align: right;
+}
+
+.stat-value {
+  width: 30px;
+  text-align: center;
+  display: inline-block;
+}
+
+
+.stat-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.stat-row button {
+  width: 2.2rem;
+  padding: 0.2rem;
+  font-size: 1rem;
+  background-color: #111;
+  border: 1px solid #500;
+  color: #ccc;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.stat-row button:hover {
+  background-color: #2a0000;
+  border-color: #ff0000;
+  color: #fff;
+}
+
+

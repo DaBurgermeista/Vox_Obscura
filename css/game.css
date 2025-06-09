@@ -1,0 +1,192 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  color: #ccc;
+  font-family: 'Courier New', monospace;
+  overflow: hidden;
+}
+
+#game-ui {
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas:
+    "location location location"
+    "left log right";
+  height: 100vh;
+}
+
+#location-bar {
+  grid-area: location;
+  background-color: #111;
+  color: #ff0000;
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #500;
+}
+
+#log-panel {
+  grid-area: log;
+  background-color: #0a0a0a;
+  padding: 1rem;
+  overflow-y: auto;
+  border-left: 2px solid #222;
+  border-right: 2px solid #222;
+}
+
+#log-output {
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  line-height: 1.5;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+.log-entry {
+  margin-bottom: 1rem;
+  white-space: pre-line;
+}
+
+.log-entry.narration {
+  color: #ccc;
+}
+
+.log-entry.system {
+  color: #66f;
+  font-style: italic;
+}
+
+.log-entry.dialogue {
+  color: #9cf;
+}
+
+.log-entry.check-success {
+  color: #0f0;
+}
+
+.log-entry.check-fail {
+  color: #f33;
+}
+
+.log-entry.item {
+  color: #f90;
+}
+
+.log-entry.warning {
+  color: #f00;
+  font-weight: bold;
+  text-shadow: 0 0 5px #800;
+}
+
+
+#left-panel, #right-panel {
+  padding: 1rem;
+  background-color: #0a0a0a;
+  overflow-y: auto;
+}
+
+#left-panel {
+  grid-area: left;
+  border-right: 2px solid #222;
+}
+
+#right-panel {
+  grid-area: right;
+  border-left: 2px solid #222;
+}
+
+section {
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1rem;
+  color: #ff0000;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #400;
+  padding-bottom: 0.2rem;
+}
+
+.choice-block {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.choice-block button {
+  background-color: #111;
+  border: 1px solid #500;
+  padding: 0.5rem;
+  color: #ccc;
+  font-family: 'Courier New', monospace;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.choice-block button:hover {
+  background-color: #2a0000;
+  color: #fff;
+  border-color: #ff0000;
+}
+
+#log-output::after {
+  content: "_";
+  animation: blink 1s steps(1) infinite;
+  color: #ff0000;
+  margin-left: 4px;
+}
+
+button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #111;
+  border: 1px solid #300;
+  color: #666;
+}
+
+.log-divider {
+  border-top: 1px solid #400;
+  margin: 1.5rem 0;
+  opacity: 0.4;
+}
+
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #800 #111;
+}
+
+/* Webkit (Chrome, Edge, etc.) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #600;
+  border-radius: 4px;
+  border: 1px solid #400;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c00;
+  border-color: #700;
+}

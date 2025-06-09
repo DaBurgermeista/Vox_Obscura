@@ -76,16 +76,25 @@ function goToStats() {
 function renderStats() {
   const container = document.getElementById("stats-container");
   container.innerHTML = "";
+
   for (let stat in currentStats) {
-    const block = document.createElement("div");
-    block.innerHTML = `
-      <span>${stat}: ${currentStats[stat]}</span>
-      <button onclick="adjustStat('${stat}', 1)">+</button>
-      <button onclick="adjustStat('${stat}', -1)">−</button>
+    const row = document.createElement("div");
+    row.className = "stat-row";
+
+    row.innerHTML = `
+        <span class="stat-label">${stat}:</span>
+        <span id="${stat}-value" class="stat-value">${currentStats[stat]}</span>
+        <button onclick="adjustStat('${stat}', 1)">+</button>
+        <button onclick="adjustStat('${stat}', -1)">−</button>
     `;
-    container.appendChild(block);
+
+
+    container.appendChild(row);
   }
+
+  document.getElementById("remaining-points").innerText = `Points left: ${remainingPoints}`;
 }
+
 
 function adjustStat(stat, change) {
   if (change === 1 && remainingPoints === 0) return;

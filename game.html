@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vox Obscura – Game</title>
+  <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+  <div id="game-ui">
+    <header id="location-bar">Location: <span id="current-location">???</span></header>
+
+    <main id="log-panel">
+      <div id="log-output"></div>
+    </main>
+
+    <aside id="left-panel">
+      <section id="stats-section">
+        <h2>Stats</h2>
+        <ul id="stats-list"></ul>
+      </section>
+
+      <section id="equipment-section">
+        <h2>Equipment</h2>
+        <div id="equipment-slots"></div>
+      </section>
+
+      <section id="interaction-section">
+        <h2>Encounter</h2>
+        <div id="enemy-info">[No active encounter]</div>
+      </section>
+    </aside>
+
+    <aside id="right-panel">
+      <section id="inventory-section">
+        <h2>Inventory</h2>
+        <ul id="inventory-list"></ul>
+      </section>
+
+      <section id="reputation-section">
+        <h2>Reputation</h2>
+        <ul id="faction-rep"></ul>
+      </section>
+    </aside>
+  </div>
+
+  <script src="js/game.js"></script>
+</body>
+</html>
