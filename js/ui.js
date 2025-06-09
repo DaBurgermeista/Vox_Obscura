@@ -1,4 +1,4 @@
-// ui.js – Log Display, Typing Queue, Dividers, and Inventory Rendering
+// ui.js – Logging and Interface Display
 
 let logQueue = [];
 let isTyping = false;
@@ -45,17 +45,4 @@ export function logDivider() {
   divider.className = "log-divider";
   logOutput.appendChild(divider);
   logOutput.scrollTop = logOutput.scrollHeight;
-}
-
-export function renderInventory() {
-  const inventoryPanel = document.getElementById("inventory-panel");
-  const inventory = JSON.parse(localStorage.getItem("inventory")) || [];
-  inventoryPanel.innerHTML = "";
-
-  inventory.forEach(item => {
-    const div = document.createElement("div");
-    div.className = "inventory-item";
-    div.innerText = item;
-    inventoryPanel.appendChild(div);
-  });
 }
